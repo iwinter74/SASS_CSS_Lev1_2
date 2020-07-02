@@ -1,0 +1,111 @@
+@import "variables.scss";
+@mixin aside($border,$padding,$margin-b,$width,$margin) {
+    border: $border;
+    padding: $padding;
+    margin-bottom: $margin-b;
+    width: $width;
+    margin: $margin
+}
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	height: 6rem;
+	text-align: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	padding: 1.5rem;
+}
+
+h1, h2 {
+	font-size: $small-font;
+}
+
+nav {
+    ul{
+    margin-top: $small-font;
+	display: flex;
+	justify-content: center;
+	margin-bottom: $small-font;
+	background-color: $primary-color;
+    }
+}
+
+li {
+	padding: $small-font;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.section_text {
+    h3 {
+	text-align: center;
+    }
+}
+
+.section_text, .section_images {
+	margin: $small-font;
+}
+
+.section_images {
+	@extend .main;
+    
+}
+img {
+	height: 12rem;
+	width: 18rem;
+	margin: 0 0.5rem $small-font 0.5rem
+}
+
+.aside {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	margin: $small-font;
+}
+
+
+.first_aside, .second_aside, .third_aside, .fourth_aside {
+    @include aside(0.2rem solid $primary-color,1rem,1rem,45%,0.5rem)
+}
+.footer_links {
+	display: flex;
+	justify-content: center;
+	margin-bottom: $small-font;
+}
+.footer {
+	height: 5rem;
+	margin-top: $small-font;
+	background-color: $primary-color;
+}
+
+@media screen and (min-width: 600px) {
+	.section_images {
+    	display: flex;
+    	flex-flow: row wrap;
+	}
+
+	.section_text {
+    	width: 70%;
+	}
+
+	.aside {
+    	display: flex;
+    	flex-flow: row wrap;
+	}
+
+}
